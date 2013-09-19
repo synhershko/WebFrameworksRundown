@@ -1,0 +1,26 @@
+﻿@model IEnumerable<StackOverflowClone.Core.Indexes.QuestionTagsIndex.ReduceResult>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No tags</p>
+}
+else
+{
+    <div id="recent-tags-list">
+        @{
+    bool isFirstTag = true;
+    foreach (var tag in Model)
+    {
+        if (!isFirstTag)
+        {
+            <br />
+        }
+        isFirstTag = false;
+        string title = string.Format("show questions tagged '{0}'", tag);
+            @Html.ActionLink(tag.Tag, "Index", "Home", new { tag.Tag }, new { @class = "post-tag", title, rel = "tag" })
+            <span class="item-multiplier">x @tag.Count</span>
+    }
+        }
+
+    </div>
+}
