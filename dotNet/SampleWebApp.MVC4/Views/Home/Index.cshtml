@@ -1,6 +1,4 @@
-﻿@using StackOverflowClone.Core
-@using StackOverflowClone.Core.Indexes
-@using StackOverflowClone.Models
+﻿@using SampleWebApp.Common.Models
 @model dynamic
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +7,7 @@
 <div id="content">
     <div id="mainbar">
         <div class="subheader">
-            <h1 id="h-top-questions">@Model.Header</h1>
+            <h1 id="h-top-questions">@ViewBag.Header</h1>
         </div>
         <div id="question-mini-list">
             @if (Model == null)
@@ -18,7 +16,7 @@
             }
             else
             {
-                Html.RenderPartial("_QuestionList", (IEnumerable<QuestionLightViewModel>)Model.Questions);
+                Html.RenderPartial("_QuestionList", (IEnumerable<Question>)Model.Questions);
             }
         </div>
     </div>
@@ -27,14 +25,14 @@
         <div class="module">
             <h2>Recent Tags</h2>
             @{
-                Html.RenderPartial("_TagListVertical", (IEnumerable<QuestionTagsIndex.ReduceResult>)Model.RecentlyUsedTags);
+                //Html.RenderPartial("_TagListVertical", (IEnumerable<QuestionTagsIndex.ReduceResult>)Model.RecentlyUsedTags);
             }
         </div>
         <br/><br/>
         <div class="module">
             <h2>Most Used Tags</h2>
             @{
-                Html.RenderPartial("_TagListVertical", (IEnumerable<QuestionTagsIndex.ReduceResult>)Model.MostUsedTags);
+                //Html.RenderPartial("_TagListVertical", (IEnumerable<QuestionTagsIndex.ReduceResult>)Model.MostUsedTags);
             }
         </div>
     </div>

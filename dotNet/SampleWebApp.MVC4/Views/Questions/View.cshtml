@@ -1,10 +1,9 @@
-﻿@using StackOverflowClone.Core
-@using StackOverflowClone.Models
+﻿@using SampleWebApp.Common.Models
 @model dynamic
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var q = (StackOverflowClone.Models.Question)Model.Question;
-    var totalVotes = q.Stats.UpVoteCount - q.Stats.DownVoteCount;
+    var q = (Question)Model.Question;
+    var totalVotes = q.UpVoteCount - q.DownVoteCount;
     var users = (Dictionary<string, User>)Model.Users;
     var related = (Question[])Model.RelatedQuestions;
 }
