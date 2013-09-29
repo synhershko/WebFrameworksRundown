@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div id="content">
+    <div id="mainbar">
+        <div class="subheader">
+            <h1 id="h-top-questions">@ViewBag.Header</h1>
+        </div>
+        <div id="question-mini-list">
+            @if (Model == null)
+            {
+                <p>No questions have been asked.</p>
+            }
+            else
+            {
+                Html.Partial("_QuestionList", Model);
+            }
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="module">
+            <h2>Recent Tags</h2>
+            @{
+                //Html.RenderPartial("_TagListVertical", (IEnumerable<QuestionTagsIndex.ReduceResult>)Model.RecentlyUsedTags);
+            }
+        </div>
+        <br/><br/>
+        <div class="module">
+            <h2>Most Used Tags</h2>
+            @{
+                //Html.RenderPartial("_TagListVertical", (IEnumerable<QuestionTagsIndex.ReduceResult>)Model.MostUsedTags);
+            }
+        </div>
+    </div>
+</div>

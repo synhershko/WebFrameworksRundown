@@ -24,6 +24,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp.WebAPI.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp.Common", "SampleWebApp.Common\SampleWebApp.Common.csproj", "{9A1C03D4-FA25-4C5C-8A5C-D2CF59288BC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp.Nancy", "SampleWebApp.Nancy\SampleWebApp.Nancy.csproj", "{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9A1C03D4-FA25-4C5C-8A5C-D2CF59288BC5} = {9A1C03D4-FA25-4C5C-8A5C-D2CF59288BC5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +55,10 @@ Global
 		{9A1C03D4-FA25-4C5C-8A5C-D2CF59288BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A1C03D4-FA25-4C5C-8A5C-D2CF59288BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A1C03D4-FA25-4C5C-8A5C-D2CF59288BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

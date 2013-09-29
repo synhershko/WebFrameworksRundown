@@ -9,6 +9,11 @@ namespace SampleWebApp.Common.ViewModels
             IsAuthenticated = principal.Identity.IsAuthenticated;
         }
 
+        public UserViewModel()
+        {
+            IsAuthenticated = false;
+        }
+
         public bool IsAuthenticated { get; private set; }
         public string Id { get; set; }
         public string Name { get; set; }
