@@ -1,5 +1,6 @@
 ﻿using System.Dynamic;
 using System.Web.Mvc;
+using SampleWebApp.Common;
 using SampleWebApp.Common.ViewModels;
 
 namespace SampleWebApp.MVC4.Controllers
@@ -30,6 +31,11 @@ namespace SampleWebApp.MVC4.Controllers
             viewModel.User = new UserViewModel(User) { Id = User.Identity.Name, Name = User.Identity.Name };
             viewModel.Question = inputModel;
             return View(viewModel);
+        }
+
+        public ActionResult View()
+        {
+            return View(FakeDataGenerator.CreateAFakeQuestion());
         }
     }
 }

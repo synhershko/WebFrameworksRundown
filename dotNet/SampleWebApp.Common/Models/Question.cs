@@ -10,7 +10,7 @@ namespace SampleWebApp.Common.Models
             CreatedOn = DateTimeOffset.UtcNow;
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Subject { get; set; }
         public string Content { get; set; }
         public DateTimeOffset CreatedOn { get; set; }

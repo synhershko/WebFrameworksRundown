@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using SampleWebApp.Common;
+using SampleWebApp.Common.ViewModels;
 
 namespace SampleWebApp.MVC4.Controllers
 {
@@ -10,7 +8,12 @@ namespace SampleWebApp.MVC4.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ViewBag.User = new UserViewModel(User);
+            ViewBag.Header = "Recent questions";
+
+            var questions = FakeDataGenerator.CreateFakeQuestions();
+
+            return View(questions);
         }
     }
 }

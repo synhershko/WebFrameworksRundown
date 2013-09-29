@@ -28,7 +28,7 @@ namespace SampleWebApp.Common
                                                                  "rubygems"
                                                              };
 
-        private static IEnumerable<Question> CreateFakeQuestions(int? numberOfFakeQuestions = null)
+        public static IEnumerable<Question> CreateFakeQuestions(int? numberOfFakeQuestions = null)
         {
             if (numberOfFakeQuestions == null)
                 numberOfFakeQuestions = GetRandom.Int(20, 100);
@@ -42,13 +42,14 @@ namespace SampleWebApp.Common
             return fakeQuestions;
         }
 
-        private static Question CreateAFakeQuestion()
+        public static Question CreateAFakeQuestion()
         {
             var fakeQuestion = Builder<Question>
                 .CreateNew()
-                .With(x => x.Id = null)
+                .With(x => x.Id = GetRandom.Int(50, 11515123))
                 .With(x => x.Subject = GetRandom.Phrase(GetRandom.Int(10, 50)))
                 .With(x => x.Content = GetRandom.Phrase(GetRandom.Int(30, 500)))
+                .With(x => x.ViewsCount = GetRandom.Int(0, 100000))
                 .And(x => x.CreatedBy = "users/" + GetRandom.Int(1, 20000))
                 .And(x => x.CreatedOn = GetRandom.DateTime(DateTime.UtcNow.AddMonths(-1), DateTime.UtcNow.AddMinutes(-5)))
                 .And(x => x.Tags = FakeTags.ToRandomList(GetRandom.Int(1, 5)))
@@ -56,7 +57,6 @@ namespace SampleWebApp.Common
                 .And(x => x.Comments = GetRandom.Int(0, 10))
                 .And(x => x.UpVoteCount = GetRandom.Int(0, 100))
                 .And(x => x.DownVoteCount = GetRandom.Int(0, 100))
-                .And(x => x.ViewsCount = GetRandom.Int(0, 100000))
                 .And(x => x.FavoriteCount = GetRandom.Int(0, 100))
                 .Build();
 

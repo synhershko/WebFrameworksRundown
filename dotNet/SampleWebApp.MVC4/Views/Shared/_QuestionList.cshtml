@@ -8,13 +8,10 @@
 else
 {
     foreach (var question in Model)
-    { 
-        {
-            var totalVote = question.UpVoteCount - question.DownVoteCount;
-        }
+    {
         <div class="question-summary narrow">
             <div class="votes">
-                <div class="mini-counts">@totalVote</div>
+                <div class="mini-counts">@Html.Raw(question.UpVoteCount - question.DownVoteCount)</div>
                 <div>votes</div>
             </div>
 
@@ -30,7 +27,7 @@ else
             </div>
 
             <div class="summary">
-                <h3><a href="@Url.Action("View", "Questions", new { id = @question.Id.Substring(question.Id.IndexOf('/') + 1) })" class="question-hyperlink" title="@question.Content">@question.Subject</a></h3>
+                <h3><a href="@Url.Action("View", "Questions", new { id = @question.Id })" class="question-hyperlink" title="@question.Content">@question.Subject</a></h3>
 
                 @Html.Partial("_QuestionTagList", question.Tags)
                 
