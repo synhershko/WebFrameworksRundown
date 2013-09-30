@@ -1,7 +1,7 @@
 ﻿@using System.Linq
 @using SampleWebApp.Common
 @inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<SampleWebApp.Common.Models.Question[]>
-           
+
 @if (Model == null || !Model.Any())
 {
     <p>No questions have been asked.</p>
@@ -30,8 +30,7 @@ else
             <div class="summary">
                 <h3><a href="#" class="question-hyperlink" title="@question.Content">@question.Subject</a></h3>
 
-                @Html.Partial("_QuestionTagList", question.Tags)
-                
+                @Html.Partial("_QuestionTagList", question.Tags)                
 
                 <div class="started">
                     <span title="@question.CreatedOn" class="relativetime">@question.CreatedOn.DateTime.ToShortDateString()&nbsp;@question.CreatedOn.DateTime.ToShortTimeString()</span>

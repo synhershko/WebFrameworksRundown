@@ -63,16 +63,10 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\SampleWebApp.MVC4\Content\logo.PNG">
-      <Link>Content\logo.PNG</Link>
-    </Content>
-    <Content Include="..\SampleWebApp.MVC4\Content\Site.css">
-      <Link>Content\Site.css</Link>
-    </Content>
-    <Content Include="..\SampleWebApp.MVC4\Content\sprites.png">
-      <Link>Content\sprites.png</Link>
-    </Content>
+    <Content Include="Content\logo.PNG" />
     <Content Include="Content\nancy-logo.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\sprites.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +79,7 @@
     <Content Include="Views\index.cshtml" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\_QuestionList.cshtml" />
+    <Content Include="Views\_Authentication.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
