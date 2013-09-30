@@ -1,0 +1,21 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<System.Collections.Generic.ICollection<System.String>>
+
+@if (Model == null || Model.Count == 0)
+{
+    <p>No tags</p>
+}
+else
+{
+    bool isFirstTag = true;
+    foreach (string tag in Model)
+    {
+        if (!isFirstTag)
+        {
+            @:&nbsp;
+        }
+        isFirstTag = false;
+        string classText = "post-tag";
+
+        <a href="#">@tag</a>
+    }
+}

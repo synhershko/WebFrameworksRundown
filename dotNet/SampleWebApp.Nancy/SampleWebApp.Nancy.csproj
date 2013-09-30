@@ -80,6 +80,8 @@
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\_QuestionList.cshtml" />
     <Content Include="Views\_Authentication.cshtml" />
+    <Content Include="Views\_QuestionTagList.cshtml" />
+    <Content Include="Views\_TagList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

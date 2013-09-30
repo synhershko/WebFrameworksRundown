@@ -1,6 +1,7 @@
-﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<System.String[]>
-
-@if (Model == null || Model.Count <= 0)
+﻿@using System.Linq
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<System.Collections.Generic.IEnumerable<System.String>>
+              
+@if (Model == null || !Model.Any())
 {
     <p>No tags</p>
 }
