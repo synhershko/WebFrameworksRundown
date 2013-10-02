@@ -1,0 +1,226 @@
+﻿@using System
+@{
+    Layout = "_Layout.cshtml";
+    var q = (Question)Model.Question;
+    var totalVotes = q.UpVoteCount - q.DownVoteCount;
+}
+
+<div id="content">
+    <div id="question-header">
+        <h1 itemprop="name"><a href="#" class="question-hyperlink">@q.Subject</a></h1>
+    </div>
+    <div id="mainbar">
+        <div class="question" id="question">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="votecell">
+                            <div class="vote">
+                                <input type="hidden" value="15178210">
+                                <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">
+                                    up vote</a>
+                                <span class="vote-count-post " title="View upvote and downvote totals" style="cursor: pointer;">
+                                    @totalVotes</span>
+                                <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">
+                                    down vote</a>
+
+                                <a class="star-off" href="#" title="This is a favorite question (click again to undo)">
+                                    favorite</a>
+                                <div class="favoritecount"><b></b></div>
+
+
+                            </div>
+
+                        </td>
+
+                        <td class="postcell">
+                            <div>
+                                <div class="post-text" itemprop="description">
+                                    @q.Content
+                                </div>
+                                <div class="post-taglist">
+                                    @foreach (var tag in q.Tags)
+                                    {
+                                        <a href="/?tag=@Uri.EscapeDataString(tag)" class="post-tag" title="show questions tagged '@tag'" rel="tag">@tag</a>
+                                    }
+                                </div>
+                                <table class="fw">
+                                    <tbody>
+                                        <tr>
+                                            <td class="vt">
+                                                <div class="post-menu">
+                                                    <a href="/q/15178210/135701" title="short permalink to this question"
+                                                        class="short-link" id="link-post-15178210">share</a><span class="lsep">|</span><a
+                                                            href="/posts/15178210/edit" class="edit-post" title="revise and improve this post">edit</a><span
+                                                                class="lsep">|</span><a id="flag-post-15178210" href="#" title="flag this post for serious problems or moderator attention">flag</a>
+                                                </div>
+                                            </td>
+                                            <td align="right" class="post-signature">
+
+
+                                                <div class="user-info ">
+                                                    <div class="user-gravatar32">
+                                                    </div>
+                                                    <div class="user-details">
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="post-signature owner">
+
+
+                                                <div class="user-info ">
+                                                    <div class="user-action-time">
+                                                        asked @q.CreatedOn.DateTime.ToShortDateString()
+                                                    </div>
+                                                    <div class="user-gravatar32">
+                                                        <a href="/users/773211/tim">
+                                                            <div class="">
+                                                                <img src="http://www.gravatar.com/avatar/feefcfe43725daa1964292e346cb5fc9?s=32&amp;d=identicon&amp;r=PG"
+                                                                    alt="" width="32" height="32">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="user-details">
+                                                        <a href="#">@q.CreatedBy</a><br>
+                                                        <span class="reputation-score" title="reputation score" dir="ltr">0</span><span
+                                                            title="2 silver badges"><span class="badge2"></span><span class="badgecount">??</span></span><span
+                                                                title="10 bronze badges"><span class="badge3"></span><span class="badgecount">??</span></span>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="votecell"></td>
+                        <td>
+                            <a class="comments-link" data-comments-count="0" title="ask author for clarification about this post">
+                                add comment</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="answers">
+
+            <a name="tab-top"></a>
+            <div id="answers-header">
+                <div class="subheader answers-subheader">
+                    <h2>@q.Answers Answers</h2>
+                    <div id="tabs">
+                        <a href="#" title="Answers with the latest activity first">active</a>
+                        <a href="#" title="Answers in the order they were provided">oldest</a>
+                        <a href="#" title="Answers with the highest score first">votes</a>
+                    </div>
+                </div>
+            </div>
+
+            <a name="new-answer"></a>
+            <form id="post-form" action="asnswer" method="post" class="post-form">
+                <h2 class="space">Your Answer</h2>
+
+                <div id="post-editor" class="post-editor">
+
+                    <div style="position: relative;">
+                        <div class="wmd-container">
+                            <textarea id="wmd-input" class="wmd-input processed" name="Content" cols="92" rows="15"
+                                tabindex="101" data-min-length=""></textarea>
+                            <div class="grippie" style="margin-right: 0px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+                    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px;
+                        height: 24px; display: none;">
+                        draft saved
+                    </div>
+
+                    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px;
+                        height: 24px; display: none;">
+                        draft discarded
+                    </div>
+
+                    <div class="community-option">
+                        <input id="communitymode" name="communitymode" type="checkbox">
+                        <label for="communitymode" title="Marking an answer community wiki encourages others to edit it by lowering the reputation barrier required to edit. However, you will not gain any upvote reputation from it. This cannot be undone.">
+                            community wiki</label>
+                    </div>
+
+
+                    <div id="wmd-preview" class="wmd-preview"></div>
+                    <div></div>
+                    <div class="edit-block">
+                    </div>
+                </div>
+                <div style="position: relative;">
+                </div>
+
+                <div class="form-submit cbt">
+                    <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                    <a href="#" class="discard-answer dno">discard</a>
+                </div>
+            </form>
+
+            <h2 class="bottom-notice">Not the answer you're looking for? 
+            Browse other questions tagged <a href="/questions/tagged/c%23" class="post-tag" title="show questions tagged 'c#'"
+                rel="tag">c#</a> <a href="/questions/tagged/wpf" class="post-tag" title="show questions tagged 'wpf'"
+                    rel="tag">wpf</a>
+                or <a href="/questions/ask">ask your own question</a>.
+            </h2>
+        </div>
+    </div>
+    <div id="sidebar">
+        <div class="module question-stats">
+
+            <div class="tagged">
+            </div>
+            <table id="qinfo">
+                <tbody>
+                    <tr>
+                        <td>
+                            <p class="label-key">asked</p>
+                        </td>
+                        <td style="padding-left: 10px">
+                            <p class="label-key" title="2013-03-02 19:04:10Z"><b>today</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="label-key">viewed</p>
+                        </td>
+
+                        <td style="padding-left: 10px">
+                            <p class="label-key">
+                                <b>@q.ViewsCount times</b>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="label-key">active</p>
+                        </td>
+                        <td style="padding-left: 10px">
+                            <p class="label-key">
+                                <b><a href="?lastactivity" class="lastactivity-link" title="2013-03-02 19:55:14Z">today</a></b>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="module sidebar-related">
+            <h4 id="h-related">Related</h4>
+
+        </div>
+    </div>
+</div>

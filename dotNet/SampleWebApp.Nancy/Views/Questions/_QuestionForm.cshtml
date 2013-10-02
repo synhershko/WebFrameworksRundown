@@ -1,0 +1,28 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<SampleWebApp.Common.ViewModels.QuestionInputModel>
+<form action="ask">
+    <div class="form-item ask-title">
+        <table class="ask-title-table">
+            <tbody>
+                <tr>
+                    <td class="ask-title-cell-key">
+                        <label for="title">Title</label>
+                    </td>
+                    <td class="ask-title-cell-value">
+                        <input type="text" class="ask-title-field edit-field-overlayed" maxlength="300" value="@Model.Subject" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+    <div id="post-editor" class="post-editor">
+        <textarea class="wmd-input processed" cols="92" rows="15">@Model.Content</textarea>
+    </div>
+    <div class="form-item">
+        <label>Tags</label>
+        <input type="text" maxlength="300" value="@Model.Tags" />
+    </div>
+
+    <p>
+        <input type="submit" value="Ask Question"/>
+    </p>
+</form>

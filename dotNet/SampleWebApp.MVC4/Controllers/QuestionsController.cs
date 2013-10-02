@@ -33,7 +33,7 @@ namespace SampleWebApp.MVC4.Controllers
             return View(viewModel);
         }
 
-        public ActionResult View()
+        public ActionResult View(int id)
         {
             return View(FakeDataGenerator.CreateAFakeQuestion());
         }

@@ -1,0 +1,19 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<SampleWebApp.Common.ViewModels.QuestionInputModel>
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<div id="content">
+    <div id="mainbar">
+        <div class="subheader">
+            <h1 id="h-top-questions">Ask a Question</h1>
+        </div>
+        <div id="question-mini-list">
+            @{ Html.Partial("_QuestionForm", Model); }
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div>How to Ask a Question</div>
+    </div>
+</div>
