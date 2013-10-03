@@ -1,0 +1,13 @@
+﻿<viewdata model="SampleWebApp.FubuMVC.HomeViewModel" />
+
+<content:main>
+<h1>Questions</h1>
+
+  !{this.LinkTo<SampleWebApp.Common.ViewModels.QuestionInputModel>().Text("Ask a Question")}
+  
+  <br></br>
+    <ul if="Model.Questions.Any()">
+      <li each="var p in Model.Questions">${p.Subject}</li>
+    </ul>
+  
+</content:main>

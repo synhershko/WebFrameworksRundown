@@ -1,0 +1,6 @@
+﻿<use namespace="FubuCore" />
+﻿<use namespace="FubuMVC.Core.UI" />
+﻿<use namespace="FubuMVC.Core.Assets" />
+<use namespace="SampleWebApp.Common.Models" />
+<use namespace="SampleWebApp.Common.ViewModels" />
+<use namespace="System.Linq" />
