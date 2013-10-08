@@ -18,6 +18,15 @@ namespace SampleWebApp.Nancy
 
                                return View["index", questions];
                            };
+
+            #region _
+            Get["/api"] = parameters =>
+                              {
+                                  // See Negotiate for more content negotiation options
+
+                                  return FakeDataGenerator.CreateFakeQuestions();
+                              };
+            #endregion
         }
     }
 }

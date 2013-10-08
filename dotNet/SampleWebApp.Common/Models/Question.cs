@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace SampleWebApp.Common.Models
 {
@@ -14,6 +15,8 @@ namespace SampleWebApp.Common.Models
         public string Subject { get; set; }
         public string Content { get; set; }
         public DateTimeOffset CreatedOn { get; set; }
+
+        [XmlIgnore]
         public ICollection<string> Tags { get; set; }
         public string CreatedBy { get; set; }
         
