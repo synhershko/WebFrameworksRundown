@@ -40,9 +40,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fix">
+      <HintPath>..\packages\Fix.0.4.2.51412\lib\net40\Fix.dll</HintPath>
+    </Reference>
+    <Reference Include="Fix.AspNet">
+      <HintPath>..\packages\Fix.AspNet.0.4.2.51412\lib\net40\Fix.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx">
+      <HintPath>..\packages\JsonFx.2.0.1209.2802\lib\net40\JsonFx.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Simple.Web">
       <HintPath>..\packages\Simple.Web.0.10.3.51415\lib\net40\Simple.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Web.AspNet">
+      <HintPath>..\packages\Simple.Web.AspNet.0.10.3.51415\lib\net40\Simple.Web.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Web.JsonFx">
+      <HintPath>..\packages\Simple.Web.JsonFx.0.10.3.51415\lib\net40\Simple.Web.JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Web.Razor">
+      <HintPath>..\packages\Simple.Web.Razor.0.10.3.51415\lib\net40\Simple.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -53,6 +71,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Simple.Web.Razor.0.10.3.51415\lib\net40\AspNetWebStack\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Simple.Web.Razor.0.10.3.51415\lib\net40\AspNetWebStack\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -65,10 +91,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeEndpoint.cs" />
+    <Compile Include="OwinAppSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Views\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -76,6 +105,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
