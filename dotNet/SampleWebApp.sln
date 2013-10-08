@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp.Nancy", "Sampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp.FubuMVC", "SampleWebApp.FubuMVC\SampleWebApp.FubuMVC.csproj", "{DFE2E3CD-2261-4509-99DB-5141235D24B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp.SimpleWeb", "SampleWebApp.SimpleWeb\SampleWebApp.SimpleWeb.csproj", "{9CCB8628-C38E-444F-8A08-6CAE973F8746}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{DFE2E3CD-2261-4509-99DB-5141235D24B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFE2E3CD-2261-4509-99DB-5141235D24B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFE2E3CD-2261-4509-99DB-5141235D24B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCB8628-C38E-444F-8A08-6CAE973F8746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCB8628-C38E-444F-8A08-6CAE973F8746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCB8628-C38E-444F-8A08-6CAE973F8746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCB8628-C38E-444F-8A08-6CAE973F8746}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
