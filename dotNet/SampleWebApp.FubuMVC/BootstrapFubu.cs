@@ -1,5 +1,3 @@
-using System.Web.Routing;
-using Bottles;
 using FubuMVC.Core;
 using FubuMVC.StructureMap;
 using StructureMap.Configuration.DSL;
@@ -15,7 +13,11 @@ namespace SampleWebApp.FubuMVC
             // This is bootstrapping an application with all default FubuMVC conventions and
             // policies pulling actions from only this assembly for classes suffixed with
             // "Endpoint" or "Endpoints"
-            return FubuApplication.DefaultPolicies().StructureMap<MyStructureMapRegistry>();
+            return FubuApplication
+                .For<MyFubuMvcPolicies>()
+                .StructureMap<MyStructureMapRegistry>();
+                
+            //.DefaultPolicies().StructureMap<MyStructureMapRegistry>();
 
 
 
@@ -41,6 +43,10 @@ namespace SampleWebApp.FubuMVC
         public MyFubuMvcPolicies()
         {
             // This is a DSL to change or add new conventions, policies, or application settings
+            Actions.IncludeClassesSuffixedWithController();
+
+//            Routes.HomeIs<HomeController>(c => c.FrontPage())
+//                  .IgnoreControllerNamespaceEntirely();
         }
     }
 }
